@@ -1,0 +1,19 @@
+# cx-web-base/application-dev.yaml
+
+conxult:
+  web:
+    templates:
+      signupConfirmUrls:
+        - users/signupConfirm
+        - api/users/signupConfirm
+        
+quarkus:
+  devservices:
+    enabled: false
+    
+  mailer:
+    mock: false
+
+  transaction-manager: 
+    default-transaction-timeout: "PT15m" 
+

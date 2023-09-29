@@ -1,0 +1,8 @@
+<h3>Hello {nickName ?: "<nickName>"}</h3>
+Here is your PIN: <code>{pin ?: "<pin>"}</code>
+
+To confirm your request:
+{#for signupConfirmUrl in signupConfirmUrls}
+<a href="{paths.basePath}/{signupConfirmUrl}?pendingId={pendingId}&pin={pin}">Click here></a><br/>
+{/for}
+

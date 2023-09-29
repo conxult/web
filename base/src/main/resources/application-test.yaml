@@ -1,0 +1,27 @@
+# cx-web-base/application-test.yaml
+
+conxult:
+  web:
+    templates:
+      signupConfirmUrls:
+        - users/signupConfirm
+        - api/users/signupConfirm
+        
+quarkus:
+  datasource:
+    web:
+      username: test
+      password: test_pwd
+      jdbc:
+        url: jdbc:postgresql://localhost:5432/test
+
+  flyway:
+    web:
+      clean-at-start: true
+
+  mailer:
+    mock: true
+
+  transaction-manager:
+    default-transaction-timeout: "PT15m"
+

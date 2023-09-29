@@ -1,0 +1,7 @@
+Hello {nickName ?: "<nickName>"}!
+
+Here is your pin: {pin ?: "<pin>" }
+
+{#for signupConfirmUrl in signupConfirmUrls}
+    signupConfirmUrl = {paths.basePath}/{signupConfirmUrl}?pendingId={pendingId}&pin={pin}
+{/for}

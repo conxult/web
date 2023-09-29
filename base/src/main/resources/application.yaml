@@ -1,0 +1,68 @@
+# cx-web-base/application.yaml
+
+conxult:
+  web:
+    formats:
+      eMail: ".+@.+"
+      nickName: ".+"
+      password:
+        - letters
+
+    jwt:
+      subject: conxult.de
+      issuer: https://conxult.de
+
+    roles: [ admin, user, guest ]
+
+    pinSize: 6
+
+    templates:
+      signupConfirmUrls:
+        - users/signupConfirm
+
+quarkus:
+
+  datasource:
+    web:
+      db-kind: ${DATASOURCE_DB_KIND:postgresql}
+      username: ${DATASOURCE_USERNAME:DATASOURCE_USERNAME}
+      password: ${DATASOURCE_PASSWORD:DATASOURCE_PASSWORD}
+      jdbc:
+        url: ${DATASOURCE_JDBC_URL:DATASOURCE_JDBC_URL}
+
+  hibernate-orm:
+    web:
+      datasource: web
+      packages: de.conxult.web.entity
+
+  flyway:
+    web:
+      schemas: web
+      migrate-at-start: true
+      locations:
+        - db/migration/web
+        - classpath:de/conxult/web/db/migration
+
+  mailer:
+    from: ${MAILER_FROM:MAILER_FROM}
+    host: ${MAILER_HOST:MAILER_HOST}
+    port: ${MAILER_PORT:MAILER_PORT}
+    ssl: ${MAILER_SSL:MAILER_SSL}
+    username: ${MAILER_USERNAME:MAILER_USERNAME}
+    password: ${MAILER_PASSWORD:MAILER_PASSWORD}
+    mock: false
+
+  smallrye-openapi:
+    path: /openapi/api
+    security-scheme: jwt
+
+  swagger-ui:
+    path: /openapi/docs
+    show-common-extensions: true
+    title: CX Web Service
+    theme: outline
+    always-include: true
+
+  http:
+    host: 0.0.0.0
+

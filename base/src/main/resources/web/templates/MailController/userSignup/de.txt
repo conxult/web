@@ -1,0 +1,7 @@
+Hallo {nickName ?: "<nickName>"}!
+
+Hier ist Ihre PIN: {pin ?: "<pin>"}
+
+{#for signupConfirmUrl in signupConfirmUrls} 
+    signupConfirmUrl = {signupConfirmUrl}
+{/for}
