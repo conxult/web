@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>jar</packaging>
+  <name>CX :: Web Annotations</name>
+
+  <properties>
+    <cx-web.version>1.0.0</cx-web.version>
+  </properties>
+
+  <groupId>de.conxult</groupId>
+  <artifactId>web-annotations</artifactId>
+  <version>${cx-web.version}</version>
+
+  <parent>
+    <groupId>de.conxult</groupId>
+    <artifactId>quarkus</artifactId>
+    <version>3.7.4</version>
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy-reactive</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-openapi</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>

@@ -6,14 +6,14 @@
   <packaging>pom</packaging>
 
   <groupId>de.conxult</groupId>
-  <artifactId>cx-web-pom</artifactId>
+  <artifactId>web-pom</artifactId>
   <version>1.0.0</version>
 
   <modules>
-    <module>annotation-test</module>
-    <module>annotation-processor</module>
+    <module>annotations</module>
     <module>base</module>
-    <module>full</module>
+    <module>processor</module>
+    <module>processor-test</module>
   </modules>
 
 </project>

@@ -1,0 +1,5 @@
+Hello {user.surName} {user.familyName}!
+
+Here is your pin: {pin ?: "<pin>" }
+
+{signupConfirmUrl}?pendingId={pendingId}

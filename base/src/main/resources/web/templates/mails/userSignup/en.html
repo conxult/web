@@ -1,0 +1,14 @@
+<h3>Hello {user.surName} {user.familyName}</h3>
+
+<p>
+    Thanks for signing up for {application.name}.
+</p>
+
+<p>
+    This is your PIN to complete the signup: <code>{pin}</code>
+</p>
+
+<p>
+    {#let href=(signupConfirmUrl + "?pendingId=" + pendingId + "&pin=" + pin) }
+    To confirm your request click here: <a href="{href}">{href}</a>
+</p>

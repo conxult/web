@@ -45,7 +45,7 @@ abstract public class CommandWebSocket {
 
     @PostConstruct
     public void collectCommandMethods() {
-        ClassCache.instanceOf(getClass())
+        ClassCache.of(getClass())
             .getMethods(OnCommand.class)
             .forEach((m) -> {
                 m.setAccessible(true);

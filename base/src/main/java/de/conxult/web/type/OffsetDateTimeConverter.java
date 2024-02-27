@@ -3,7 +3,7 @@
  */
 package de.conxult.web.type;
 
-import de.conxult.util.TimeUtil;
+import de.conxult.util.OffsetDateTimeUtil;
 import io.quarkus.arc.Unremovable;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.ext.ParamConverter;
@@ -20,12 +20,12 @@ public class OffsetDateTimeConverter
 
   @Override
   public OffsetDateTime fromString(String text) {
-    return TimeUtil.toOffsetDateTime(text);
+    return OffsetDateTimeUtil.of(text);
   }
 
   @Override
   public String toString(OffsetDateTime t) {
-    return TimeUtil.toString(t);
+    return OffsetDateTimeUtil.toString(t);
   }
 
 }

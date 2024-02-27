@@ -1,5 +1,22 @@
+# cx-web-base/application-dev.yaml
+
+application:
+  id: "cx-web"
+  name: "conxult-web-id"
+  description: "CX Web Base"
+  
+conxult:
+  web:
+    templates:
+      signupConfirmUrl: api/users/signupConfirm
 
 quarkus:
   devservices:
     enabled: false
-    
+
+  mailer:
+    mock: false
+
+  transaction-manager:
+    default-transaction-timeout: "PT15m"
+

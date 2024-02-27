@@ -1,0 +1,5 @@
+You've requested to reset your password for {email}
+
+Here is your pin: {pin ?: "<pin>" }
+
+To set your password click here: {setPasswordUrl}?pendingId={pendingId}

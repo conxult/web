@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
 @Getter @Setter @Accessors(chain = true)
 public class Token {
 
-  String token;
-  Date   expires;
+    String token;
+    Date   expires;
 
 }

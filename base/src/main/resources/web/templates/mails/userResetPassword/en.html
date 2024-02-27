@@ -1,0 +1,10 @@
+<h3>You've requested to reset your password for {email}</h3>
+
+<p>
+    This is your PIN to set a new password: <code>{pin}</code>
+</p>
+
+<p>
+    {#let href=(setPasswordUrl + "?pendingId=" + pendingId) }
+    To set your password click here: <a href="{href}">{href}</a>
+</p>

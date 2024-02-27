@@ -2,9 +2,10 @@ package de.conxult.web.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import de.conxult.pa.annotation.PaHistoryTable;
 import de.conxult.pa.entity.IdEntity;
 import de.conxult.pa.entity.VersionEntity;
-import de.conxult.web.CxWebConstants;
+import de.conxult.web.WebConfiguration;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -22,33 +23,40 @@ import lombok.experimental.Accessors;
  * @author joerg
  */
 @Entity
-@Table(name = "users", schema = CxWebConstants.SCHEMA)
-@Getter @Setter @Accessors(chain = true)
+@Table(name = "users", schema = WebConfiguration.SCHEMA)
 @JsonInclude(Include.NON_NULL)
+@PaHistoryTable
+@Getter @Setter @Accessors(chain = true)
 public class User
-  extends    VersionEntity<User>
-  implements IdEntity<User> {
+    extends    VersionEntity<User>
+    implements IdEntity<User> {
 
-  @Id
-  @Column(name = "id", nullable = false, updatable = false)
-  UUID id;
+    @Id
+    @Column(name = "id", nullable = false, updatable = false)
+    UUID id;
 
-  @Column(name = "nick_name")
-  String nickName;
+    @Column(name = "nick_name")
+    String nickName;
 
-  @Column(name = "first_name")
-  String firstName;
+    @Column(name = "sur_name")
+    String surName;
 
-  @Column(name = "last_name")
-  String lastName;
+    @Column(name = "family_name")
+    String familyName;
 
-  @Column(name = "email")
-  String email;
+    @Column(name = "email")
+    String email;
 
-  @Column(name = "state")
-  String state;
+    @Column(name = "state")
+    String state;
 
-  @Transient
-  Collection<String> roles = new TreeSet<>();
+    @Transient
+    Collection<String> roles = new TreeSet<>();
 
+    public static enum State {
+
+        ACTIVE,
+        DISABLED,
+        DELETED,
+    }
 }

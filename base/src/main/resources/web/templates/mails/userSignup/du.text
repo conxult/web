@@ -1,0 +1,5 @@
+Hallo {nickName ?: "<nickName>"}!
+
+Hier ist deine PIN: {pin ?: "<pin>"}
+
+{paths.basePath}/{signupConfirmUrl}?pendingId={pendingId}
